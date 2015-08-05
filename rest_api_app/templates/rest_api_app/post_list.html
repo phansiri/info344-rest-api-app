@@ -1,23 +1,15 @@
-<html>
-    <head>
-        <title>Lit's Book store</title>
-    </head>
-    <body>
-        <h1><a href="/">Welcome to Lit's Book store</a></h1>
-        <h3>Please buy something</h3>
-
+{% extends "rest_api_app/base.html" %}
+    {% block content %}
         {% for book in books %}
-        <div>
-            <h2><a href="">{{ book.title }}</a></h2>
-            <p>Author: {{ book.author }}</p>
-            <p>Publication date: {{ book.publication_date }}</p>
-            <p>Price: {{ book.price }}</p>
-            <p>Link to Buy: {{ book.linkToBuy }}</p>
-            <p>Link of Image: {{book.image}}</p>
-            <h3>Summary</h3>
-            <p>{{ book.summary|linebreaks }}</p>
-        </div>
+            <div class="book">
+                <img src="{{book.image}}" alt="">
+                <h2><a href="{% url "book_detail" pk=book.pk %}">{{ book.title }}</a></h2>
+                <p>Author: {{ book.author }}</p>
+                <p>Publication date: {{ book.publication_date }}</p>
+                <p>Price: ${{ book.price }}</p>
+                <p>Link to Buy at <a href="{{ book.linkToBuy }}">Amazon</a></p>
+                <h3><a href="">Summary</a></h3>
+                <p>{{ book.summary|linebreaks }}</p>
+            </div>
         {% endfor %}
-    </body>
-
-</html>
+    {% endblock content %}

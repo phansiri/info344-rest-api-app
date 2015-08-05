@@ -4,7 +4,7 @@ from rest_api_app import views
 
 urlpatterns = [
     url(r'^books/$', views.book_list),
-    url(r'^books/(?P<pk>[0-9]+)/$', views.book_detail),
+    url(r'^books/(?P<pk>[0-9]+)/$', views.book_detail, name='book_detail'),
     url(r'^$', views.post_list, name='post_list'),
 ]
 
