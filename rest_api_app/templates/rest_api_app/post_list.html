@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Lit's Book store</title>
+    </head>
+    <body>
+        <h1><a href="/">Welcome to Lit's Book store</a></h1>
+        <h3>Please buy something</h3>
+
+        {% for book in books %}
+        <div>
+            <h2><a href="">{{ book.title }}</a></h2>
+            <p>Author: {{ book.author }}</p>
+            <p>Publication date: {{ book.publication_date }}</p>
+            <p>Price: {{ book.price }}</p>
+            <p>Link to Buy: {{ book.linkToBuy }}</p>
+            <p>Link of Image: {{book.image}}</p>
+            <h3>Summary</h3>
+            <p>{{ book.summary|linebreaks }}</p>
+        </div>
+        {% endfor %}
+    </body>
+
+</html>

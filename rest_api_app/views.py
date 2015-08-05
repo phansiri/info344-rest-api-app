@@ -43,3 +43,7 @@ def book_detail(request, pk, format=None):
     elif request.method == 'DELETE':
         user.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+def post_list(request):
+    books = Books.objects.order_by('title')
+    return render(request, 'rest_api_app/post_list.html', {'books': books})
