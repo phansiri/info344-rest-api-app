@@ -5,4 +5,12 @@ from rest_api_app.models import Books
 class UsersSerializer(serializers.ModelSerializer):
     class Meta:
         model = Books
-        fields = ('title', 'author', 'publication_date', 'publisher', 'summary', 'price', 'linkToBuy', 'image')
+        fields = ('id',
+                  'title',
+                  'author',
+                  'publication_date',
+                  'publisher',
+                  'summary',
+                  'price',
+                  'linkToBuy',
+                  'image')

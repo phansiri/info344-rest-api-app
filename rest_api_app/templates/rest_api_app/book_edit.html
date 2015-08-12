@@ -1,0 +1,9 @@
+{% extends "rest_api_app/base.html" %}
+
+{% block content %}
+    <h1>New Book</h1>
+    <form method="post" class="post-form"></form>{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
